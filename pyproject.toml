@@ -1,0 +1,102 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "product2vec"
+authors =  [
+    {name = "Theo Vall", email = "fedorvall.ds@gmail.com"},
+]
+description = "Product2Vec model for finding complementary and fungible products"
+requires-python = ">=3.8"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Scientific/Engineering",
+  "Operating System :: OS Independent",
+]
+keywords = [
+  "Word2Vec",
+  "complementary goods",
+  "fungible goods",
+]
+dynamic = ["version", "dependencies", "optional-dependencies"]
+
+[project.urls]
+Repository = "https://github.com/TheoVall-DS/product2vec"
+
+[tool.setuptools.dynamic]
+version = {attr = "product2vec.__version__"}
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies = {dev = {file = ["dev-requirements.txt"]}}
+
+[tool.setuptools.packages.find]
+include = ["product2vec*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310"]
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.pytest_cache
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | product2vec.egg-info
+    | docs
+  )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+extend_skip_glob = ["product2vec/*/__init__.py", "product2vec/__init__.py", "docs/*"]
+
+[tool.pylint.format]
+max-line-length = 88
+
+[tool.pylint.similarities]
+min-similarity-lines = 5
+ignore-docstrings = "yes"
+ignore-comments = "yes"
+ignore-import = "yes"
+
+[tool.pylint.message_control]
+disable = [
+  "too-few-public-methods"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["product2vec", "tests"]
+omit = [
+  "product2vec/base.py*",
+  "product2vec/*/__init__.py",
+  "product2vec/__init__.py",
+  "tests/conftest.py",
+  "tests/__init__.py",
+]
+
+[tool.coverage.report]
+show_missing = true
