@@ -1,3 +1,8 @@
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![pipeline](https://github.com/TheoVall-DS/product2vec/actions/workflows/python-app.yml/badge.svg)](https://github.com/TheoVall-DS/product2vec/actions/workflows/python-app.yml)
+
 # product2vec
 
 product2vec is a Python library that implements Product2Vec model. It is capable of finding complements and substitutes among products given shopping baskets. Current implementation is based on the original paper: https://ssrn.com/abstract=3519358

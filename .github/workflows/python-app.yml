@@ -1,4 +1,4 @@
-name: Python application
+name: pipeline
 
 on:
   push:
@@ -34,3 +34,7 @@ jobs:
     - name: Test
       run: |
         pytest tests --cov --cov-fail-under=90
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
