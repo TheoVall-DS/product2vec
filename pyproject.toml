@@ -34,7 +34,7 @@ keywords = [
 dynamic = ["version", "dependencies", "optional-dependencies"]
 
 [project.urls]
-Repository = "https://github.com/TheoVall-DS/product2vec"
+Homepage = "https://github.com/TheoVall-DS/product2vec"
 
 [tool.setuptools.dynamic]
 version = {attr = "product2vec.__version__"}

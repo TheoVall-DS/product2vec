@@ -1,6 +1,6 @@
 # product2vec
 
-product2vec is a Python library that implements Product2Vec model. It is capable of finding complements and substitutes among products given shopping baskets.
+product2vec is a Python library that implements Product2Vec model. It is capable of finding complements and substitutes among products given shopping baskets. Current implementation is based on the original paper: https://ssrn.com/abstract=3519358
 
 # Installation
 

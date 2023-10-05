@@ -47,7 +47,10 @@ class Product2Vec(BaseModel):
 
     References
     ----------
-    Original paper: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3519358
+    Chen, Fanglin and Liu, Xiao and Proserpio, Davide and Troncoso, Isamar,
+    Product2Vec: Leveraging representation learning to model consumer product choice in
+    large assortments (July 1, 2022). NYU Stern School of Business, Available at SSRN:
+    https://ssrn.com/abstract=3519358 or http://dx.doi.org/10.2139/ssrn.3519358
     """
 
     def __init__(self, **gensim_kwargs: dict) -> None:
